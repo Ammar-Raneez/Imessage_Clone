@@ -8,7 +8,7 @@ export function Sidebar() {
     return (
         <div className={styles.sidebar}>
             <div className={styles.sidebar__header}>
-                <Avatar />
+                <Avatar className={styles.sidebar__avatar} />
                 <div className={styles.sidebar__input}>
                     <SearchIcon />
                     <input placeholder="Search" />
