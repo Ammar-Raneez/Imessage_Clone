@@ -7,7 +7,7 @@ export function Login() {
     const signIn = () => {
         auth
             .signInWithPopup(provider)
-            .catch((err) => console.log(err.message))
+            .catch((err) => alert(err.message))
     }
 
     return (
