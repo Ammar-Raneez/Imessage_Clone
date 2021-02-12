@@ -1,3 +1,3 @@
-.IMessage > h1 {
-    color: red;
+.IMessage {
+    display: flex;
 }
