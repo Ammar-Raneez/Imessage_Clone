@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+src/features/counter
+
 # testing
 /coverage
 
