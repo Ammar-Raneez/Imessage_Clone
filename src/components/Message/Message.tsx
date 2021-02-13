@@ -4,10 +4,12 @@ import { MessageWrapper } from './Message.styles'
 
 declare type MessageProps = {
     id: string;
-    contents: string[];
+    contents: any;
 }
 
-export const Message: React.FC<MessageProps> = ({ id, contents }) => {
+export const Message: React.FC<MessageProps> = ({ id, contents: {
+    timestamp, displayName, email, message, photo, uid
+} }) => {
     return (
         <MessageWrapper>
             <Avatar />

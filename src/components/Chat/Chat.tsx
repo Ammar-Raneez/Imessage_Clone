@@ -7,8 +7,11 @@ import db from '../../firebase';
 import { IMessage } from '../../types';
 import { Message } from '../Message/Message';
 import { ChatWrapper } from './Chat.styles';
+import firebase from 'firebase'
+import { selectUser } from '../../features/userSlice';
 
 export function Chat() {
+    const user = useSelector(selectUser);
     const chatName = useSelector(selectchatName);
     const chatId = useSelector(selectchatId);
     const [input, setInput] = useState<string>("");
@@ -34,7 +37,17 @@ export function Chat() {
     const sendMessage = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
 
-        //firebase stuff
+        db.collection("chats")
+            .doc(chatId)
+            .collection("messages")
+            .add({
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                message: input,
+                uid: user.uid,
+                photo: user.photo,
+                email: user.email,
+                displayName: user.displayName
+            })
 
         setInput("");
     }
@@ -48,11 +61,9 @@ export function Chat() {
 
             {/* chat messages */}
             <div className="chat__messages">
-                <Message id="" contents={[]} />
-                <Message id="" contents={[]} />
-                <Message id="" contents={[]} />
-                <Message id="" contents={[]} />
-                <Message id="" contents={[]} />
+                {messages.map(({ id, data }) => (
+                    <Message id={id} contents={data} />
+                ))}
             </div>
 
             <div className="chat__input">
