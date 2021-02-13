@@ -19,6 +19,7 @@ export function Chat() {
 
     useEffect(() => {
         if (chatId) {
+            console.log(chatId)
             db.collection('chats')
                 .doc(chatId)
                 .collection("messages")
@@ -32,7 +33,7 @@ export function Chat() {
                     )
                 ))
         }
-    }, [])
+    }, [chatId])
 
     const sendMessage = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();

@@ -1,12 +1,20 @@
 import styled from "styled-components";
 
-export const MessageWrapper = styled.div `
+declare type MessageWrapperProps = {
+    userEmail: string;
+    senderEmail: string;
+}
+
+export const MessageWrapper = styled.div<MessageWrapperProps> `
     display: flex;
     align-items: center;
     position: relative;
     width: fit-content;
     justify-content: space-between;
     margin: 15px;
+    margin-left: ${({ userEmail, senderEmail }) => (
+        (userEmail === senderEmail) && "auto"
+    )};
 
     > p {
         background-color: #f3f3f5;

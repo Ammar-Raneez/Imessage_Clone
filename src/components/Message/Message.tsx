@@ -1,5 +1,7 @@
 import { Avatar } from '@material-ui/core'
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../features/userSlice'
 import { MessageWrapper } from './Message.styles'
 
 declare type MessageProps = {
@@ -10,11 +12,13 @@ declare type MessageProps = {
 export const Message: React.FC<MessageProps> = ({ id, contents: {
     timestamp, displayName, email, message, photo, uid
 } }) => {
+    const user = useSelector(selectUser);
+
     return (
-        <MessageWrapper>
-            <Avatar />
-            <p>This is a message</p>
-            <small>timestamp</small>
-        </MessageWrapper>
+        <MessageWrapper userEmail={user.email} senderEmail={email} >
+            <Avatar src={photo} />
+            <p>{message}</p>
+            <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
+        </MessageWrapper>  
     )
 }
