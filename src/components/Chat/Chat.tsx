@@ -5,7 +5,7 @@ import styles from './Chat.module.css'
 
 
 export function Chat() {
-    const [input, setInput] = useState("");
+    const [input, setInput] = useState<string>("");
 
     const sendMessage = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.preventDefault();
