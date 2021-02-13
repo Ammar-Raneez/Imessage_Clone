@@ -1,16 +1,16 @@
 import React from 'react'
 import { Chat } from '../Chat/Chat'
 import { Sidebar } from '../Sidebar/Sidebar'
-import styles from './IMessage.module.css'
+import { IMessageWrapper } from './IMessage.styles'
 
 export function IMessage() {
     return (
-        <div className={styles.IMessage}>
+        <IMessageWrapper>
             {/* sidebar */}
             <Sidebar />
             {/* chat */}
             <Chat />
-        </div>
+        </IMessageWrapper>
     )
 }
 
