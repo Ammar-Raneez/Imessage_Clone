@@ -16,6 +16,19 @@ export const MessageWrapper = styled.div<MessageWrapperProps> `
         (userEmail === senderEmail) && "auto"
     )};
 
+    >.message__photo {
+        order: 0;
+    }
+
+    > .message__photo {
+        order:  ${({ userEmail, senderEmail }) => (
+            (userEmail === senderEmail) && "1"
+        )};
+        margin:  ${({ userEmail, senderEmail }) => (
+            (userEmail === senderEmail) && "15px"
+        )};
+    }
+
     > p {
         background-color: #f3f3f5;
         font-size: medium;
@@ -23,6 +36,15 @@ export const MessageWrapper = styled.div<MessageWrapperProps> `
         border-radius: 20px;
         margin: 10px;
         margin-right: auto;
+    }
+
+    > p {
+        background-color: ${({ userEmail, senderEmail }) => (
+            (userEmail === senderEmail) && "#3cabfa"
+        )};
+        color: ${({ userEmail, senderEmail }) => (
+            (userEmail === senderEmail) && "white"
+        )};
     }
 
     > small {

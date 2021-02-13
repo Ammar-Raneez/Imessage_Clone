@@ -16,7 +16,7 @@ export const Message: React.FC<MessageProps> = ({ id, contents: {
 
     return (
         <MessageWrapper userEmail={user.email} senderEmail={email} >
-            <Avatar src={photo} />
+            <Avatar className="message__photo" src={photo} />
             <p>{message}</p>
             <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
         </MessageWrapper>  
