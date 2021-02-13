@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './App.css';
 import { IMessage } from './components/IMessage/IMessage';
 import { Login } from './components/Login/Login';
 import { login, logout, selectUser } from './features/userSlice';
