@@ -21,11 +21,11 @@ export const MessageWrapper = styled.div<MessageWrapperProps> `
     }
 
     > .message__photo {
-        order:  ${({ userEmail, senderEmail }) => (
-            (userEmail === senderEmail) && "1"
-        )};
-        margin:  ${({ userEmail, senderEmail }) => (
-            (userEmail === senderEmail) && "15px"
+        ${({ userEmail, senderEmail }) => (
+            (userEmail === senderEmail) && `
+                order: 1;
+                margin: 15px;
+            `
         )};
     }
 
@@ -39,11 +39,11 @@ export const MessageWrapper = styled.div<MessageWrapperProps> `
     }
 
     > p {
-        background-color: ${({ userEmail, senderEmail }) => (
-            (userEmail === senderEmail) && "#3cabfa"
-        )};
-        color: ${({ userEmail, senderEmail }) => (
-            (userEmail === senderEmail) && "white"
+        ${({ userEmail, senderEmail }) => (
+            (userEmail === senderEmail) && `
+                background-color: #3cabfa;
+                color: white;
+            `
         )};
     }
 
