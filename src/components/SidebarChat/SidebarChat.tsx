@@ -11,7 +11,7 @@ export const SidebarChat: React.FC<SidebarChatProps> = ({ id, chatName }) => {
     return (
         <SidebarChatWrapper>
             <Avatar />
-            <div className="sidebarChat__info">
+            <div key={id} className="sidebarChat__info">
                 <h3>{chatName}</h3>
                 <p>Last Message sent...</p>
                 <small>timestamp</small>

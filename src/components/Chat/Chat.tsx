@@ -1,6 +1,7 @@
 import { IconButton } from '@material-ui/core';
 import MicNoneIcon  from '@material-ui/icons/MicNone';
 import React, { useState } from 'react'
+import { Message } from '../Message/Message';
 import { ChatWrapper } from './Chat.styles';
 
 export function Chat() {
@@ -23,12 +24,7 @@ export function Chat() {
 
             {/* chat messages */}
             <div className="chat__messages">
-                <p>Message</p>
-                <p>Message</p>
-                <p>Message</p>
-                <p>Message</p>
-                <p>Message</p>
-                <p>Message</p>
+                <Message />
             </div>
 
             <div className="chat__input">
