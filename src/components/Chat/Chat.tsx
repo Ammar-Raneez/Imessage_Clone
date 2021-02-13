@@ -24,7 +24,11 @@ export function Chat() {
 
             {/* chat messages */}
             <div className="chat__messages">
-                <Message />
+                <Message id="" contents={[]} />
+                <Message id="" contents={[]} />
+                <Message id="" contents={[]} />
+                <Message id="" contents={[]} />
+                <Message id="" contents={[]} />
             </div>
 
             <div className="chat__input">

@@ -1,9 +1,18 @@
+import { Avatar } from '@material-ui/core'
 import React from 'react'
+import { MessageWrapper } from './Message.styles'
 
-export const Message = () => {
+declare type MessageProps = {
+    id: string;
+    contents: string[];
+}
+
+export const Message: React.FC<MessageProps> = ({ id, contents }) => {
     return (
-        <div>
-            
-        </div>
+        <MessageWrapper>
+            <Avatar />
+            <p>This is a message</p>
+            <small>timestamp</small>
+        </MessageWrapper>
     )
 }
