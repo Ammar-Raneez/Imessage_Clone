@@ -1,8 +1,7 @@
 import { IconButton } from '@material-ui/core';
 import MicNoneIcon  from '@material-ui/icons/MicNone';
 import React, { useState } from 'react'
-import styles from './Chat.module.css'
-
+import { ChatWrapper } from './Chat.styles';
 
 export function Chat() {
     const [input, setInput] = useState<string>("");
@@ -16,14 +15,14 @@ export function Chat() {
     }
 
     return (
-        <div className={styles.chat}>
-            <div className={styles.chat__header}>
-                <h4>To: <span className={styles.chat__name}>Channel name</span></h4>
+        <ChatWrapper>
+            <div className="chat__header">
+                <h4>To: <span className="chat__name">Channel name</span></h4>
                 <strong>Details</strong>
             </div>
 
             {/* chat messages */}
-            <div className={styles.chat__messages}>
+            <div className="chat__messages">
                 <p>Message</p>
                 <p>Message</p>
                 <p>Message</p>
@@ -32,16 +31,16 @@ export function Chat() {
                 <p>Message</p>
             </div>
 
-            <div className={styles.chat__input}>
+            <div className="chat__input">
                 <form>
                     <input value={input} onChange={event => setInput(event.target.value)} placeholder="IMessage" type="text" />
                     <button onClick={event => sendMessage(event)}>Send Message</button>
                 </form>
 
                 <IconButton>
-                    <MicNoneIcon className={styles.chat__mic} />
+                    <MicNoneIcon className="chat__mic" />
                 </IconButton>
             </div>
-        </div>
+        </ChatWrapper>
     )
 }
