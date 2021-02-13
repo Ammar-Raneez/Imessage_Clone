@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux'
 import { SidebarChatWrapper } from './SidebarChat.styles'
 import { setChat } from '../../features/chatSlice'
 import db from '../../firebase'
-import { ISidebarChatInfo } from '../../types'
 
 declare type SidebarChatProps = {
     id: string;
@@ -13,7 +12,7 @@ declare type SidebarChatProps = {
 
 export const SidebarChat: React.FC<SidebarChatProps> = ({ id, chatName }) => {
     const dispatch = useDispatch();
-    const [chatInfo, setChatInfo] = useState<ISidebarChatInfo[]>([]);
+    const [chatInfo, setChatInfo] = useState<any[]>([]);
 
     useEffect(() => {
         db.collection("chats")
@@ -36,11 +35,11 @@ export const SidebarChat: React.FC<SidebarChatProps> = ({ id, chatName }) => {
                 )
             }}
         >
-            <Avatar src={chatInfo[0]?.photo} />
+            <Avatar src={chatInfo[0]?.data.photo} />
             <div key={id} className="sidebarChat__info">
                 <h3>{chatName}</h3>
-                <p>{chatInfo[0]?.message}</p>
-                <small>{new Date(chatInfo[0]?.timestamp?.toDate()).toLocaleString()}</small>
+                <p>{chatInfo[0]?.data.message}</p>
+                <small>{new Date(chatInfo[0]?.data.timestamp?.toDate()).toLocaleString()}</small>
             </div>
         </SidebarChatWrapper>
     )

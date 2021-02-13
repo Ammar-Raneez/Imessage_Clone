@@ -1,9 +1,6 @@
-export interface ISidebarChatInfo {
+export interface ISidebarChat {
+    id: string;
     data: any;
-}
-
-export interface ISidebarChat extends ISidebarChatInfo {
-    id: string,
 }
 
 //gives all data to IMessage
