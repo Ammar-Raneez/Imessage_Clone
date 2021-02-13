@@ -1,4 +1,4 @@
-export interface ChatType {
+export interface ISidebarChat {
     id: string,
     data: any
 }

@@ -7,11 +7,11 @@ import { SidebarChat } from '../SidebarChat/SidebarChat'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../features/userSlice'
 import db, { auth } from '../../firebase'
-import { ChatType } from '../../types'
+import { ISidebarChat } from '../../types'
 
 export function Sidebar() {
     const user = useSelector(selectUser);
-    const [chats, setChats] = useState<ChatType[]>([]);
+    const [chats, setChats] = useState<ISidebarChat[]>([]);
 
     useEffect(() => {
         db.collection('chats').onSnapshot(snapshot => {
