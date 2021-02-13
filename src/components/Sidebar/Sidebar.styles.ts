@@ -41,6 +41,9 @@ export const SidebarWrapper = styled.div `
     }
 
     .sidebar__chats {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
         overflow-y: scroll;
         -ms-overflow-style: none;
         scrollbar-width: none;
