@@ -2,7 +2,12 @@ import { Avatar } from '@material-ui/core'
 import React from 'react'
 import { SidebarChatWrapper } from './SidebarChat.styles'
 
-export function SidebarChat() {
+declare type SidebarChatProps = {
+    id: string;
+    chatName: string;
+}
+
+export const SidebarChat: React.FC<SidebarChatProps> = ({ id, chatName }) => {
     return (
         <SidebarChatWrapper>
             <Avatar />

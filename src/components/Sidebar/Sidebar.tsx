@@ -36,8 +36,12 @@ export function Sidebar() {
             </div>
 
             <div className="sidebar__chats">
-                {chats.map(chat => (
-                    <SidebarChat />
+                {chats.map(({ id, data: { chatname } }) => (
+                    <SidebarChat
+                        key={id}
+                        id={id}
+                        chatName={chatname}
+                    />
                 ))}
             </div>
         </SidebarWrapper>
