@@ -1,7 +1,7 @@
 import { Button } from '@material-ui/core'
 import React from 'react'
 import { auth, provider } from '../../firebase'
-import styles from './Login.module.css'
+import { LoginWrapper } from './Login.styles'
 
 export function Login() {
     const signIn = () => {
@@ -11,12 +11,12 @@ export function Login() {
     }
 
     return (
-        <div className={styles.login}>
-            <div className={styles.login__logo}>
+        <LoginWrapper>
+            <div>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/IMessage_logo_%28Apple_Inc.%29.png" alt="logo" />
                 <h1>IMessage</h1>
             </div>
             <Button onClick={signIn}>Sign In</Button>
-        </div>
+        </LoginWrapper>
     )
 }
