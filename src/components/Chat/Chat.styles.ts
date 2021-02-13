@@ -50,5 +50,12 @@ export const ChatWrapper = styled.div `
 
     .chat__messages {
         flex: 1;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .chat__messages::-webkit-scrollbar {
+        display: none;
     }
 `
